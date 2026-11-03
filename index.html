@@ -1,11 +1,324 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ARK PROJECT</title>
+  <title>Arkhenetics | Applied Topological Computing, ZINN &amp; Commercial Licensing</title>
+  <meta name="description" content="Arkhenetics — Commercial licensing, enterprise R&D, and Zero-Point Informed Neural Network (ZINN / Ark-ZPF) architectures.">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #111111;
+      --muted: #555555;
+      --subtle: #777777;
+      --border: #e2e2e2;
+      --accent: #1f2937;
+      --code-bg: #f8f9fa;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
+      line-height: 1.68;
+      font-size: 16.5px;
+      -webkit-font-smoothing: antialiased;
+      padding: 3.5rem 1.5rem 4.5rem;
+    }
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    header {
+      border-bottom: 1.5px solid var(--fg);
+      padding-bottom: 1.6rem;
+      margin-bottom: 2.5rem;
+    }
+    .eyebrow {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.45rem;
+      font-weight: 600;
+    }
+    h1 {
+      font-size: 2.15rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      line-height: 1.2;
+      color: var(--fg);
+      margin-bottom: 0.55rem;
+    }
+    .subtitle {
+      font-size: 1.04rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+    .meta-bar {
+      margin-top: 1.1rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.82rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.4rem;
+    }
+    .meta-bar a {
+      color: var(--fg);
+      text-decoration: none;
+      border-bottom: 1px solid #999;
+      transition: border-color 0.15s ease;
+    }
+    .meta-bar a:hover {
+      border-bottom-color: var(--fg);
+    }
+    section {
+      margin-bottom: 2.6rem;
+    }
+    h2 {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.15rem;
+      font-weight: 600;
+    }
+    p {
+      margin-bottom: 1rem;
+      text-align: justify;
+      hyphens: auto;
+    }
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.15rem;
+      margin-top: 0.8rem;
+    }
+    .pillar-card {
+      border: 1px solid var(--border);
+      padding: 1.1rem 1.2rem;
+      background: #ffffff;
+    }
+    .pillar-title {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--fg);
+      margin-bottom: 0.4rem;
+    }
+    .pillar-desc {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 0;
+      text-align: left;
+    }
+    .math-banner {
+      background-color: var(--code-bg);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--fg);
+      padding: 0.85rem 1.1rem;
+      font-family: "Latin Modern Math", "STIX Two Math", "Cambria Math", "Palatino Linotype", Georgia, serif;
+      font-size: 0.95rem;
+      color: #111;
+      margin: 1.1rem 0;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .math-banner .caption {
+      display: block;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--subtle);
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+    .paper-summary {
+      list-style: none;
+      font-size: 0.95rem;
+    }
+    .paper-summary li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .paper-summary strong {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-right: 0.45rem;
+    }
+    .license-notice {
+      border: 1px solid var(--fg);
+      padding: 1.2rem 1.4rem;
+      font-size: 0.88rem;
+      color: #222;
+      background: #fafafa;
+    }
+    .license-notice h3 {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+      color: var(--fg);
+    }
+    .license-notice p {
+      margin-bottom: 0;
+      font-size: 0.87rem;
+      color: var(--muted);
+    }
+    footer {
+      margin-top: 3.2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--border);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.78rem;
+      color: var(--subtle);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .sym {
+      font-style: italic;
+    }
+    .bb {
+      font-weight: 600;
+    }
+    @media (max-width: 640px) {
+      body {
+        padding: 2rem 1.1rem 3rem;
+        font-size: 15.5px;
+      }
+      h1 {
+        font-size: 1.75rem;
+      }
+      .pillar-grid {
+        grid-template-columns: 1fr;
+      }
+      p {
+        text-align: left;
+      }
+    }
+  </style>
 </head>
 <body>
-  ARK PROJECT
+  <div class="container">
+    <header>
+      <div class="eyebrow">Applied Topological Computing &middot; IP Stewardship &amp; Commercial Licensing</div>
+      <h1>Arkhenetics</h1>
+      <div class="subtitle">Zero-Point Informed Neural Networks (ZINN), Ark-ZPF Kernel Architectures, and Enterprise Technology Licensing</div>
+      <div class="meta-bar">
+        <span><strong>Founder:</strong> Jung Soo Kim (<a href="https://orcid.org/0009-0006-5140-0604" target="_blank" rel="noopener">ORCID: 0009-0006-5140-0604</a>)</span>
+        <span><strong>Research Partner:</strong> <a href="https://arkhenomia.org" target="_blank" rel="noopener">Arkhenomia Institute</a></span>
+        <span><strong>Canonical Archive:</strong> <a href="https://github.com/arkhenomia/arkheion" target="_blank" rel="noopener">github.com/arkhenomia/arkheion</a></span>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>Corporate Mandate</h2>
+        <p>
+          <strong>Arkhenetics</strong> (<a href="https://arkhenetics.com" style="color:inherit;">arkhenetics.com</a>) is the commercial technology and intellectual property entity administering enterprise R&amp;D, industrial deployment, and commercial licensing for the mathematical and physical frameworks established by the <a href="https://arkhenomia.org" style="color:inherit;">Arkhenomia Institute</a>. Arkhenetics translates formally verified zero-point continuum equations into deterministic software kernels, neural operator regularizers, and fault-tolerant systems engineering.
+        </p>
+        <div class="math-banner">
+          <span class="caption">Intrinsic Mathematical Safety &amp; Zero-Point Valve Architecture</span>
+          &nabla; &middot; <span class="sym">X</span> = 0, &emsp;
+          det(<span class="sym">V</span><sub>valve</sub>) &equiv; 0, &emsp;
+          &Sigma;(<strong>u</strong>) = &frac12;&thinsp;&Vert;(<strong>I</strong> &minus; <strong>M</strong><sub>0</sub>)<strong>u</strong>&Vert;<sub><span class="sym">H</span></sub><sup>2</sup> &rarr; 0, &emsp;
+          <span class="sym">V</span>(<strong>&omega;</strong>) = &nabla;<sub><strong>&omega;</strong></sub>&Psi;(|<strong>&omega;</strong>|)
+        </div>
+      </section>
+
+      <section>
+        <h2>Core Technology Domains</h2>
+        <div class="pillar-grid">
+          <div class="pillar-card">
+            <div class="pillar-title">ZINN Architecture</div>
+            <p class="pillar-desc">
+              <strong>Zero-Point Informed Neural Networks:</strong> Variational operator-learning and physics-informed neural architectures embedding convex rotational potentials (<span class="sym">&Psi;</span>(<strong>&omega;</strong>)) and Golden <span class="sym">M</span><sub>0</sub> Lyapunov attractors (<span class="sym">E</span><sub>0</sub>) to eliminate gradient blow-up.
+            </p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-title">Ark-ZPF Filter Kernels</div>
+            <p class="pillar-desc">
+              <strong>Arkhenomia Zero-Point Filter:</strong> Modular drop-in regularization kernels with smooth subcritical laminar shielding (&Phi;(|<strong>&omega;</strong>|/&Omega;<sub><span class="sym">c</span></sub>) = 0 for |<strong>&omega;</strong>| &le; &Omega;<sub><span class="sym">c</span></sub>) and energy-neutral gyroscopic alignment.
+            </p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-title">OS &amp; Cluster Governance</div>
+            <p class="pillar-desc">
+              <strong>Quasi-Periodic Resource Scheduling:</strong> Hardware, firmware, and OS kernel state-index synchronization built on Pisot&ndash;Vijayaraghavan Golden lattices (<span class="bb">&#x2124;</span>[<span class="sym">&phi;</span>]) to prevent resonance congestion.
+            </p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-title">Verified CFD &amp; Continuum Solvers</div>
+            <p class="pillar-desc">
+              <strong>High-Reynolds Spectral Engines:</strong> Industrial turbulence, hydro-thermodynamic, and MHD simulation modules backed by mechanized Lean&nbsp;4 (<code style="font-size:0.88em;">v4.34.1</code>) formal verification.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Underlying Canonical Publications (v1.5 Series)</h2>
+        <ul class="paper-summary">
+          <li>
+            <strong>Part 1 (H.U.G.G.E.R &amp; TZT)</strong>
+            <em>A Grand Unified Framework for Macroscopic Gravity-Fluid Dynamics and 0-Point Equilibrium Operation</em> &mdash; Covariant Riemann&ndash;Cartan trace closure on <span class="bb">&#x1D54B;</span><sup>3</sup> (<span class="sym">&chi;</span>(<span class="bb">&#x1D54B;</span><sup>3</sup>) = 0) and localized counter-strain decomposition.
+          </li>
+          <li>
+            <strong>Part 2 (Golden <span class="sym">M</span><sub>0</sub>)</strong>
+            <em>The Golden <span class="sym">M</span><sub>0</sub> Tensor Mechanics and Quasi-Periodic 3-Torus (<span class="bb">&#x1D54B;</span><sup>3</sup><sub><span class="sym">&phi;</span></sub>) Stability</em> &mdash; Diophantine resonance suppression over <span class="bb">&#x2124;</span>[<span class="sym">&phi;</span>], exponential Lyapunov convergence (&Sigma; &rarr; 0), and force-free Aharonov&ndash;Bohm holonomy.
+          </li>
+          <li>
+            <strong>Part 3 (NS<sub>TZT</sub> Closure)</strong>
+            <em>A Vorticity-Selective Dissipative Model (NS<sub>TZT</sub>) for Incompressible Flows on the 3-Torus (<span class="bb">&#x1D54B;</span><sup>3</sup>)</em> &mdash; Gr&ouml;nwall-free <span class="sym">H</span><sup>1</sup><sub>&sigma;</sub> global strong well-posedness via Calder&oacute;n&ndash;Zygmund cubic <span class="sym">L</span><sup>3</sup> balance and &gt;80% laminar over-damping suppression.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="license-notice">
+          <h3>Commercial Licensing &amp; Regulatory Notice (Policy v2.2.0+)</h3>
+          <p>
+            While non-commercial academic research is permitted under <strong>CC BY-NC 4.0</strong> via the <a href="https://arkhenomia.org" style="color:inherit; text-decoration:underline;">Arkhenomia Institute</a>, any commercial use, corporate R&amp;D, in-house enterprise deployment, AI knowledge distillation, surrogate model training, automated corpus ingestion, OS kernel/hardware/firmware porting (ZINN / Ark-ZPF), or network protocol implementation requires a separate written commercial license agreement executed with the Author or <strong>Arkhenetics</strong>. High-risk or non-peaceful applications are strictly prohibited. All domestic and international patent rights are expressly reserved.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>&copy; 2026 Jung Soo Kim &amp; Arkhenetics. All rights reserved.</div>
+      <div>
+        <a href="https://arkhenetics.com">arkhenetics.com</a> &nbsp;|&nbsp;
+        <a href="https://arkhenomia.org">arkhenomia.org</a> &nbsp;|&nbsp;
+        <a href="https://github.com/arkhenomia/arkheion">GitHub</a> &nbsp;|&nbsp;
+        <a href="https://huggingface.co/datasets/arkhenomia/arkheion">Hugging Face</a>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
